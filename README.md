@@ -1,2 +1,2 @@
 # CharacterSheetDB
-An old C++ project I've made in 2022 that maintains and storages RPG character sheets in a database that uses a ncurses interface.
+An old C++ application I've made in early 2021 that allows users to maintain and store RPG character sheets in a simple database. The program uses ncurses for the GUI to allow for ease of navigation.
