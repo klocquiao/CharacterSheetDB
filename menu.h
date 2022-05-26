@@ -2,7 +2,7 @@
 #define MENU_H
 
 #include "menudisplays.h"
-#include "database.h"
+#include "model/database.h"
 #include <ncurses.h>
 #include <vector>
 

@@ -2,8 +2,8 @@
 #define ADDMENU_H
 
 #include "menu.h"
-#include "character.h"
-#include "database.h"
+#include "model/character.h"
+#include "model/database.h"
 #include <ncurses.h>
 #include <iostream>
 

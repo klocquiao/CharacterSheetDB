@@ -16,7 +16,6 @@ void Addmenu :: getMenu(Database& db) {
     wclear(inputWin);
     box(inputWin, 0, 0);
 
-    //See if recently added function has already been added to db to prevent duplicates
     if (db.findMatchingRecord(character)) {
         mvwprintw(inputWin, 1, 1, "Record already exists! Press anything to continue...");
         wrefresh(inputWin);

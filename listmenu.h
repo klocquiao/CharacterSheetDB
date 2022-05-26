@@ -2,7 +2,7 @@
 #define LISTMENU_H
 
 #include "menu.h"
-#include "database.h"
+#include "model/database.h"
 #include <ncurses.h>
 #include <iostream>
 

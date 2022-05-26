@@ -1,7 +1,7 @@
 #ifndef MENUDISPLAYS_H
 #define MENUDISPLAYS_H
 
-#include "character.h"
+#include "model/character.h"
 #include <ncurses.h>
 #include <string>
 

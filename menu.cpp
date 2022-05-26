@@ -136,7 +136,6 @@ bool Menu :: isValidInput(char toAppend, char recentAppend, bool isInt) {
 }
 
 
-//Used only for ranged based searching (deletemenu, findmenu)
 void Menu :: inputWindowRanges(WINDOW * win, WINDOW * inputWin, string& begin, string& end) {
         mvwprintw(win, menuYMax / 2, 2, "Enter start of range...");
         wrefresh(win);
@@ -148,10 +147,8 @@ void Menu :: inputWindowRanges(WINDOW * win, WINDOW * inputWin, string& begin, s
 }
 
 
-//Used for getting indices of matches to search or numbers in range (begin - end)
 void Menu :: setIndexVec(vector<int> &vec, Database &db, const char fieldType, const char searchType, 
     const string begin, const string end, const string search) {
-    //Note: Field options greater or equal to 6 are integers
     if (searchType == '1') {
         if (fieldType < '6') {
         vec = db.exactSearchString(fieldType, search); 

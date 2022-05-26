@@ -11,21 +11,16 @@ Listmenu :: Listmenu() {
 
 
 void Listmenu :: getMenu(Database& db) {
-
     displays.fieldTypeDisplay(win, menuYMax, menuXMax);
-
-    //Choose field option
     char fieldType = inputWindow(inputWin, 7);
 ;
     if (fieldType == END) {
         endwin();
         return;
     }
-    //Note: field options above 6 are integers
     else if (fieldType < '6') displays.sortTypeStringDisplay(win, menuYMax, menuXMax);
     else displays.sortTypeIntDisplay(win, menuYMax, menuXMax);
 
-    //Choose field option
     char searchType = inputWindow(inputWin, 2);
     if (searchType == END) {
         endwin();
@@ -33,7 +28,6 @@ void Listmenu :: getMenu(Database& db) {
 
     displays.refreshWindow(win);
 
-    //Sort db vector
     switch(searchType) {
         case '1': db.ascendingSort(fieldType); break;
         case '2': db.descendingSort(fieldType); break;
@@ -64,7 +58,6 @@ void Listmenu :: scrollData(Database &db, int y) {
 
     displays.recordDisplay(win, y);
 
-    //Get all fields from current record
     string currentFirstName = db.getCharacterAtIndex(i).getFirstName();
     string currentLastName = db.getCharacterAtIndex(i).getLastName();
     string currentGender = db.getCharacterAtIndex(i).getGender();
@@ -77,7 +70,6 @@ void Listmenu :: scrollData(Database &db, int y) {
     displays.currentRecordDisplay(win, menuYMax, db.getCharacterAtIndex(i));
     char ch = getch();
 
-    //Change record on screen or exit
     while(ch != END) {
         switch (ch) {
             case 'w': 
@@ -94,14 +86,12 @@ void Listmenu :: scrollData(Database &db, int y) {
                 break;
         }
 
-    //Get current index and display on screen
     string location = "";
     location += to_string(i + 1) + '/' + to_string(searchSize);
     displays.refreshInput(inputWin, location);
     
     displays.recordDisplay(win, y);
 
-    //Get all fields from current record
     currentFirstName = db.getCharacterAtIndex(i).getFirstName();
     currentLastName = db.getCharacterAtIndex(i).getLastName();
     currentGender = db.getCharacterAtIndex(i).getGender();
